@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C80E55472D8592BF005A4DDC /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C80E55462D8592BF005A4DDC /* SQLite */; };
+		C80E555A2D869B02005A4DDC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C80E55592D869AFE005A4DDC /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C80E55232D859211005A4DDC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,7 @@
 		C80E55112D859211005A4DDC /* OtpScatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtpScatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80E55222D859211005A4DDC /* OtpScatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OtpScatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80E552C2D859212005A4DDC /* OtpScatcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OtpScatcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80E55592D869AFE005A4DDC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80E55472D8592BF005A4DDC /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,7 @@
 		C80E55082D859211005A4DDC = {
 			isa = PBXGroup;
 			children = (
+				C80E55592D869AFE005A4DDC /* .gitignore */,
 				C80E55132D859211005A4DDC /* OtpScatcher */,
 				C80E55252D859211005A4DDC /* OtpScatcherTests */,
 				C80E552F2D859212005A4DDC /* OtpScatcherUITests */,
@@ -112,6 +120,7 @@
 			);
 			name = OtpScatcher;
 			packageProductDependencies = (
+				C80E55462D8592BF005A4DDC /* SQLite */,
 			);
 			productName = OtpScatcher;
 			productReference = C80E55112D859211005A4DDC /* OtpScatcher.app */;
@@ -195,6 +204,9 @@
 			);
 			mainGroup = C80E55082D859211005A4DDC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C80E55452D8592BF005A4DDC /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C80E55122D859211005A4DDC /* Products */;
 			projectDirPath = "";
@@ -212,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80E555A2D869B02005A4DDC /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,11 +412,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"OtpScatcher/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.gh.jsixface.OtpScatcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,11 +440,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"OtpScatcher/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.gh.jsixface.OtpScatcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,6 +560,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C80E55452D8592BF005A4DDC /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C80E55462D8592BF005A4DDC /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C80E55452D8592BF005A4DDC /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C80E55092D859211005A4DDC /* Project object */;
 }
