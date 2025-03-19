@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C80E55472D8592BF005A4DDC /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C80E55462D8592BF005A4DDC /* SQLite */; };
 		C80E555A2D869B02005A4DDC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C80E55592D869AFE005A4DDC /* .gitignore */; };
+		C867CB2F2D891DF80027CCE0 /* EonilFSEvents in Frameworks */ = {isa = PBXBuildFile; productRef = C867CB2E2D891DF80027CCE0 /* EonilFSEvents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C867CB2F2D891DF80027CCE0 /* EonilFSEvents in Frameworks */,
 				C80E55472D8592BF005A4DDC /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +123,7 @@
 			name = OtpScatcher;
 			packageProductDependencies = (
 				C80E55462D8592BF005A4DDC /* SQLite */,
+				C867CB2E2D891DF80027CCE0 /* EonilFSEvents */,
 			);
 			productName = OtpScatcher;
 			productReference = C80E55112D859211005A4DDC /* OtpScatcher.app */;
@@ -206,6 +209,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C80E55452D8592BF005A4DDC /* XCRemoteSwiftPackageReference "SQLite" */,
+				C867CB2D2D891DF80027CCE0 /* XCRemoteSwiftPackageReference "FSEvents" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C80E55122D859211005A4DDC /* Products */;
@@ -406,10 +410,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OtpScatcher/OtpScatcher.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OtpScatcher/Preview Content\"";
+				DEVELOPMENT_TEAM = D8C2DHYP66;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -434,10 +441,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OtpScatcher/OtpScatcher.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OtpScatcher/Preview Content\"";
+				DEVELOPMENT_TEAM = D8C2DHYP66;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -570,6 +580,14 @@
 				minimumVersion = 0.15.3;
 			};
 		};
+		C867CB2D2D891DF80027CCE0 /* XCRemoteSwiftPackageReference "FSEvents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eonil/FSEvents";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -577,6 +595,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C80E55452D8592BF005A4DDC /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
+		};
+		C867CB2E2D891DF80027CCE0 /* EonilFSEvents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C867CB2D2D891DF80027CCE0 /* XCRemoteSwiftPackageReference "FSEvents" */;
+			productName = EonilFSEvents;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

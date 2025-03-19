@@ -1,6 +1,15 @@
 {
-  "originHash" : "42598adf0e546dd7490b40b2fd0f5298dee9c098f71dcdbfcb5cc4c07573f374",
+  "originHash" : "30120857ae553e8e26cfc014ec8ff068ebc442bdf9500fcd0bfaf5ae481b2ae1",
   "pins" : [
+    {
+      "identity" : "fsevents",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/eonil/FSEvents",
+      "state" : {
+        "revision" : "e6b7cdfa2754454e194a45ee6c2004d0f630fe88",
+        "version" : "0.1.7"
+      }
+    },
     {
       "identity" : "sqlite.swift",
       "kind" : "remoteSourceControl",

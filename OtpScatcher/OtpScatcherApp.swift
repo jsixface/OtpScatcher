@@ -1,73 +1,40 @@
 import SwiftUI
-import UserNotifications
-import UserNotificationsUI
 import os
 
-private let logger = Logger(
-    subsystem: "MainMenu", category: "UI")
+private let logger = Logger(subsystem: "MainMenu", category: "UI")
 
 @main
 struct OtpScatcherApp: App {
 
-    @State var currentNumber: String = "1"
+    init() {
+        Task.init {
+            for await code in MessageProcessor.codes {
+                if let authCode = code.code {
+                    copyToClipboard(code: authCode)
+                    await NotificationHelper.sendNotification(currentCode: authCode)
+                }
+            }
+        }
+    }
 
     var body: some Scene {
-        MenuBarExtra(currentNumber, systemImage: "\(currentNumber).circle") {
-        
-            Button("One") {
-                currentNumber = "1"
-            }
-            Button("Two") {
-                currentNumber = "2"
-            }
-            Button("Three") {
-                currentNumber = "3"
-                Task.init { await  sendNotification(currentNumber: currentNumber) }
-            }
+        MenuBarExtra("Otp Scatcher", systemImage: "message.badge") {
 
+            Button("Test Notification") {
+                Task.init {
+                    await NotificationHelper.sendNotification(currentCode: "0000")
+                }
+            }
             Divider()
             Button("Quit") {
                 NSApplication.shared.terminate(nil)
-           }
+            }
         }
     }
 }
 
-private func sendNotification(currentNumber: String) async {
-    let content = UNMutableNotificationContent()
-    content.title = "Security code received"
-    content.body = "Dectected code \(currentNumber)"
-    let trigger = UNTimeIntervalNotificationTrigger(
-        timeInterval: 1, repeats: false)
-    let uuidString = UUID().uuidString
-    let request = UNNotificationRequest(
-        identifier: uuidString, content: content,
-        trigger: trigger)
-
-    // Schedule the request with the system.
-    let notificationCenter = UNUserNotificationCenter.current()
-    let settings = await notificationCenter.notificationSettings()
-
-    // Verify the authorization status.
-    if (settings.authorizationStatus == .authorized)
-        || (settings.authorizationStatus == .provisional)
-    {
-        do {
-            try await notificationCenter.add(request)
-            logger.debug("Notification scheduled successfully")
-        } catch {
-            logger.error(
-                "Failed to add notification: \(error.localizedDescription)"
-            )
-        }
-    } else {
-        do {
-            try await notificationCenter.requestAuthorization(
-                options: [.alert, .provisional])
-        } catch {
-            logger.error(
-                "Failed to add notification: \(error.localizedDescription)"
-            )
-        }
-    }
+private func copyToClipboard(code: String) {
+    let pasteboard = NSPasteboard.general
+    pasteboard.clearContents()
+    pasteboard.setString(code, forType: .string)
 }
